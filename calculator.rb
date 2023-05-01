@@ -17,7 +17,7 @@ class Calculator
     return dividend / divisor
   end
 
-  def sqaure(number)
+  def square(number)
     return square * square
   end
 
@@ -31,9 +31,35 @@ class TestCalculator < Minitest::Test
     calculator = Calculator.new
     assert_equal 4, calculator.add(1, 3)
   end
-
+  
   def test_add_with_negative_numbers
     calculator = Calculator.new
     assert_equal -2, calculator.add(1, -3)
   end
+
+  def test_subtract
+    calculator = Calculator.new
+    assert_equal 2, calculator.subtract(5, 3)
+  end
+
+  def test_multiply
+    calculator = Calculator.new
+    assert_equal 20, calculator.multiply(4, 5)
+  end
+
+  def test_divide
+    calculator = Calculator.new
+    assert_equal 20, calculator.divide(100, 5)
+  end
+
+  def test_square
+    calculator = Calculator.new
+    assert_equal 25, calculator.square(5)
+  end
+
+  def test_multiply_with_zero
+    calculator = Calculator.new
+    assert_equal 0, calculator.multiply(0, 550)
+  end
+  
 end
