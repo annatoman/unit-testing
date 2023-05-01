@@ -4,7 +4,10 @@ class ChangeMachine
     def change(cents)
         coins = []
         while cents > 0
-            if cents >= 10
+            if cents >= 25
+                coins << 25
+                cents -= 25
+            elsif cents >= 10
                 coins << 10
                 cents -= 10
             elsif cents >= 5
@@ -38,5 +41,10 @@ class TestChangeMachine < Minitest::Test
   def test_ten_returns_one_dime
     machine = ChangeMachine.new
     assert_equal [10], machine.change(10)
+  end
+
+  def test_twenty_five_returns_one_quarter
+    machine = ChangeMachine.new
+    assert_equal [25], machine.change(25)
   end
 end
