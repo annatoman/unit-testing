@@ -47,4 +47,9 @@ class TestChangeMachine < Minitest::Test
     machine = ChangeMachine.new
     assert_equal [25], machine.change(25)
   end
+
+  def test_ninety_eight_returns_array
+    machine = ChangeMachine.new
+    assert_equal [25, 25, 25, 10, 10, 1, 1, 1], machine.change(98)
+  end
 end
